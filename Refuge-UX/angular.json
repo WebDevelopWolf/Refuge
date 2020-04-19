@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Refuge-UX"
+    }
+  },
+  "defaultProject": "Refuge-UX",
+  "cli": {
+    "analytics": "29497657-0754-4bcb-ac77-d3923da807cb"
+  }
 }
