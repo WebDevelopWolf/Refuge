@@ -7,26 +7,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-.navbar{
-    background-color: darkred;
-}
-
-.navbar-brand {
-    font-family: 'Special Elite', cursive;
-}
-
-.jumbotron {
-    background: url('./assets/virus-bg.png') no-repeat right bottom;
-    background-size: 20%;
-    background-color: #111;
-}
-
-.jumbotron h1, .text-darkred {
+a {
     color: darkred;
-    font-family: 'Special Elite', cursive;
 }
 
-.jumbotron .lead {
-    color: #444;
-    font-family: 'Raleway', sans-serif;
+a:hover {
+    color: red;
 }
