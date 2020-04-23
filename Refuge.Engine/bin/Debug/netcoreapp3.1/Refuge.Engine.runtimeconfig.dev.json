@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/webdevwolf/.dotnet/store/|arch|/|tfm|",
+      "/Users/webdevwolf/.nuget/packages"
+    ]
+  }
+}

@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Refuge.Engine.Controllers
 {
+    // TODO Replace with Auth Controller
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
