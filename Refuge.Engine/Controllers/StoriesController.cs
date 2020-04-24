@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Refuge.Engine.Data;
 
 namespace Refuge.Engine.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class StoriesController : ControllerBase
