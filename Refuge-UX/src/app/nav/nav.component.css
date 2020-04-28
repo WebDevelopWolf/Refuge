@@ -9,3 +9,7 @@
 .navbar-brand {
     font-family: 'Special Elite', cursive;
 }
+
+.text-darkred {
+    color: darkred;
+}

@@ -9,7 +9,7 @@ using Refuge.Engine.Data;
 
 namespace Refuge.Engine.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class StoriesController : ControllerBase

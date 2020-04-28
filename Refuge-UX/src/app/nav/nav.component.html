@@ -1,19 +1,30 @@
 <nav class="navbar navbar-expand-md navbar-light">
   <a class="navbar-brand font-weight-bold" href="#">Refuge</a>
-<ul class="navbar-nav mr-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="#">New Game</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Continue Game</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Achievements</a>
-  </li>
-</ul>
-  <form class="form-inline mt-2 mt-md-0">
-    <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark" type="text" placeholder="Username" aria-label="Username">
-    <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark" type="password" placeholder="Password" aria-label="Password">
-    <button class="btn btn-dark my-2 my-sm-0" type="submit">Login</button>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="#">New Game</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logOut()">Log Out</a>
+    </li>
+  </ul>
+
+  <div *ngIf="loggedIn()" class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle">
+      Liane
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#"><i class="fad fa-spinner"></i> See Progress</a>
+      <a class="dropdown-item" href="#"><i class="fad fa-chart-pie"></i> Check Stats</a>
+      <a class="dropdown-item" href="#"><i class="fad fa-medal"></i> Achievements</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#"><i class="fad fa-sign-out"></i> Log out</a>
+    </div>
+  </div>
+
+  <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
+    <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark text-darkred" type="text" name="username" placeholder="Username" aria-label="Username" required [(ngModel)]="model.username">
+    <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark text-darkred" type="password" name="password" placeholder="Password" aria-label="Password" required [(ngModel)]="model.password">
+    <button class="btn btn-dark my-2 my-sm-0" type="submit" [disabled]="!loginForm.valid">Login</button>
   </form>
 </nav>
