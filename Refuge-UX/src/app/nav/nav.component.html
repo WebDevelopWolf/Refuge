@@ -1,30 +1,33 @@
 <nav class="navbar navbar-expand-md navbar-light">
-  <a class="navbar-brand font-weight-bold" href="#">Refuge</a>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="#">New Game</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" (click)="logOut()">Log Out</a>
-    </li>
-  </ul>
+  <div class="container-fluid">
+    <a class="navbar-brand font-weight-bold nudge-left" href="#">Refuge</a>
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="loggedIn()" class="nav-item">
+        <a class="nav-link" href="#">New Game</a>
+      </li>
+      <li *ngIf="loggedIn()" class="nav-item">
+        <a class="nav-link" href="#">Continue Game</a>
+      </li>
+    </ul>
 
-  <div *ngIf="loggedIn()" class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle">
-      Liane
-    </a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#"><i class="fad fa-spinner"></i> See Progress</a>
-      <a class="dropdown-item" href="#"><i class="fad fa-chart-pie"></i> Check Stats</a>
-      <a class="dropdown-item" href="#"><i class="fad fa-medal"></i> Achievements</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#"><i class="fad fa-sign-out"></i> Log out</a>
+    <div *ngIf="loggedIn()" class="btn-group nudge-right" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle" aria-controls="dropdown-basic">
+        {{ authService.decodedToken?.unique_name | titlecase }} <span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu mt-3" role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" href="#"><i class="fad fa-spinner"></i> See Progress</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#"><i class="fad fa-chart-pie"></i> Check Stats</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#"><i class="fad fa-medal"></i> Achievements</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="logOut()"><i class="fad fa-sign-out"></i> Log out</a>
+        </li>
+      </ul>
     </div>
-  </div>
 
-  <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
-    <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark text-darkred" type="text" name="username" placeholder="Username" aria-label="Username" required [(ngModel)]="model.username">
-    <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark text-darkred" type="password" name="password" placeholder="Password" aria-label="Password" required [(ngModel)]="model.password">
-    <button class="btn btn-dark my-2 my-sm-0" type="submit" [disabled]="!loginForm.valid">Login</button>
-  </form>
+    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
+      <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark text-darkred" type="text" name="username" placeholder="Username" aria-label="Username" required [(ngModel)]="model.username">
+      <input class="form-control mr-sm-2 rounded-0 border-0 bg-dark text-darkred" type="password" name="password" placeholder="Password" aria-label="Password" required [(ngModel)]="model.password">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+  </div>
 </nav>

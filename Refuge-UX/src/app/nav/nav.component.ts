@@ -10,7 +10,7 @@ import { ToastService } from '../_services/toast.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private authService: AuthService, private toast: ToastService) { }
+  constructor(public authService: AuthService, private toast: ToastService) { }
 
   ngOnInit() {
   }
@@ -24,8 +24,7 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn() {
-    const token = localStorage.getItem('token');
-    return !!token;
+    return this.authService.loggedIn();
   }
 
   logOut() {

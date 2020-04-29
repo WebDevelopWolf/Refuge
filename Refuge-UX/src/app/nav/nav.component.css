@@ -13,3 +13,7 @@
 .text-darkred {
     color: darkred;
 }
+
+.dropdown-item {
+    cursor: pointer;
+}

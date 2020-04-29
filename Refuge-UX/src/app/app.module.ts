@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastNotificationsModule } from 'ngx-toast-notifications';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -26,7 +27,8 @@ import { ToastService } from './_services/toast.service';
       BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
-      ToastNotificationsModule
+      ToastNotificationsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
