@@ -3,8 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+html {
+    --scrollbarBG: #222222;
+    --thumbBG: darkred;
+}
+    body::-webkit-scrollbar {
+    width: 11px;
+}
 body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
     font-family: 'Raleway', sans-serif;
+    overflow-y: auto;
 }
 
 a {
