@@ -4,8 +4,8 @@
       <div class="col-md-8">
         <h1 class="display-4 jumbo-heading"><i class="fad fa-viruses"></i> {{story?.tagline}}</h1>
         <p class="lead pl-4">{{story?.lead}} <i class="fad fa-viruses"></i></p>
-        <a *ngIf="!registerMode" class="btn btn-dark mr-1" href="#" (click)="registerToggle()">Register</a>
-        <a *ngIf="!registerMode" class="btn btn-danger ml-1" href="#">Learn More</a>
+        <a *ngIf="!registerMode" class="btn btn-dark mr-1" (click)="registerToggle()">Register</a>
+        <a *ngIf="!registerMode" class="btn btn-danger ml-1" [routerLink]="['/learn-more']">Learn More</a>
       </div>
       <div *ngIf="registerMode" class="col">
         <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>

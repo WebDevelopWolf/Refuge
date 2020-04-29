@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { ToastService } from '../_services/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,7 @@ import { ToastService } from '../_services/toast.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(public authService: AuthService, private toast: ToastService) { }
+  constructor(public authService: AuthService, private toast: ToastService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,8 @@ export class NavComponent implements OnInit {
       this.toast.success('Continue your story...', 'Welcome Back ' + this.model.username);
     }, error => {
       this.toast.error(error, 'Zombies ate your login - try again');
+    }, () => {
+      this.router.navigate(['/home']);
     });
   }
 
@@ -30,6 +33,7 @@ export class NavComponent implements OnInit {
   logOut() {
     localStorage.removeItem('token');
     this.toast.success('Come back soon!', 'Goodbye!');
+    this.router.navigate(['/home']);
   }
 
 }

@@ -2,10 +2,10 @@
   <app-nav></app-nav>
 </header>
 
-<app-home></app-home>
+<router-outlet></router-outlet>
 
 <footer class="container">
   <p class="float-right"><a href="#">Back to top</a></p>
-  <p>&copy; 2020 WebDevelopWolf Ltd. &middot; <a href="#">Studio</a> &middot; <a href="#">About</a></p>
+  <p>&copy; 2020 WebDevelopWolf Ltd. &middot; <a [routerLink]="['/studio']">Studio</a> &middot; <a [routerLink]="['/learn-more']">About</a></p>
 </footer>
   
