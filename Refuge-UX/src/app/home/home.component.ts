@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../_services/auth.service';
+import { ToastService } from '../_services/toast.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { AuthService } from '../_services/auth.service';
 })
 export class HomeComponent implements OnInit {
   story: any;
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private toast: ToastService) { }
   registerMode = false;
 
   ngOnInit() {
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.http.get('http://localhost:5000/api/stories/1').subscribe(response => {
       this.story = response;
     }, error => {
-      console.log(error);
+      this.toast.error(error, 'Internal Zombie Story Plot Hole');
     });
   }
 
