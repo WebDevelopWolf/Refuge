@@ -14,6 +14,7 @@ Coming Soon!
 
 # New Features!
 
+  - [29/04/2020] - Security - Added Rotes and Guarding
   - [29/04/2020] - Toast Notifications - Added Toaster Notifications
   - [29/04/2020] - Error Handling - Added advanced production error handling
   
