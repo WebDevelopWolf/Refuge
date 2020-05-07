@@ -14,7 +14,8 @@ Coming Soon!
 
 # New Features!
 
-  - [29/04/2020] - Security - Added Rotes and Guarding
+  - [07/05/2020] - Story - Added Background and Lore to the Refuge experience
+  - [29/04/2020] - Security - Added Routes and Guarding
   - [29/04/2020] - Toast Notifications - Added Toaster Notifications
   - [29/04/2020] - Error Handling - Added advanced production error handling
   

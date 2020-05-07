@@ -48,3 +48,18 @@ a:hover {
 .nudge-left {
     padding-left: 4rem;
 }
+
+h1, h2, h3, h4, h5, .btn-link {
+    color: darkred;
+    font-family: 'Special Elite', cursive;
+}
+
+.btn-link, .btn-link:hover, .card-header {
+    color: #FFF;
+    background-color: darkred;
+}
+
+.card {
+    background-color: #222222;
+    border: none;
+}

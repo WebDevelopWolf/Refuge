@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastNotificationsModule } from 'ngx-toast-notifications';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
@@ -37,6 +40,9 @@ import { ToastService } from './_services/toast.service';
       FormsModule,
       ToastNotificationsModule,
       BsDropdownModule.forRoot(),
+      CarouselModule.forRoot(),
+      AlertModule.forRoot(),
+      AccordionModule.forRoot(),
       RouterModule.forRoot(appRoutes)
    ],
    providers: [
